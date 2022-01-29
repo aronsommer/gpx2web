@@ -17,7 +17,7 @@ then
     # Following line shows how to merge gpx files with ogr2ogr
     # for file in InputDirectory/*.gpx; do ogr2ogr OutputDirectory/gpx.shp -append "${file}" LayerName -fieldTypeToString DateTime; done
     # Merge gpx files to shp file
-    for file in $SCRIPT_DIR/input/*.gpx; do $OGR2OGR_PATH $SCRIPT_DIR/output/mergedgpxfiles.shp -append "${file}" tracks -fieldTypeToString DateTime; done
+    # for file in $SCRIPT_DIR/input/*.gpx; do $OGR2OGR_PATH $SCRIPT_DIR/output/mergedgpxfiles.shp -append "${file}" tracks -fieldTypeToString DateTime; done
     # Merge gpx files to geojson file
     for file in $SCRIPT_DIR/input/*.gpx; do $OGR2OGR_PATH $SCRIPT_DIR/output/mergedgpxfiles.geojson -append "${file}" tracks -fieldTypeToString DateTime; done
     # Change file extension of geojson file to js
