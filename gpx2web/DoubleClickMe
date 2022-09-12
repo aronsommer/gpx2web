@@ -20,6 +20,8 @@ then
     # for file in $SCRIPT_DIR/input/*.gpx; do $OGR2OGR_PATH $SCRIPT_DIR/output/mergedgpxfiles.shp -append "${file}" tracks -fieldTypeToString DateTime; done
     # Merge gpx files to geojson file
     for file in $SCRIPT_DIR/input/*.gpx; do $OGR2OGR_PATH $SCRIPT_DIR/output/mergedgpxfiles.geojson -append "${file}" tracks -fieldTypeToString DateTime; done
+    # Merge gpx files to geojson file and simplify
+    # for file in $SCRIPT_DIR/input/*.gpx; do $OGR2OGR_PATH -simplify 0.00001 -f "GeoJSON" $SCRIPT_DIR/output/mergedgpxfiles.geojson -append "${file}" tracks -fieldTypeToString DateTime; done    
     # Change file extension of geojson file to js
     for file in $SCRIPT_DIR/output/*.geojson; do mv "$file" "${file%.geojson}.js"; done
     # Replace first line in js file
